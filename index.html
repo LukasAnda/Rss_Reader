@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel="stylesheet" type="text/css"
+          href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,800,700,400italic%7CPT+Serif:400,400italic%7CBree+Serif"/>
+
+    <!-- Material Design for Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+
+    <title>Title</title>
+</head>
+<body>
+<nav class="bg-primary">
+    <div class="container-fluid h-100">
+        <div class="row h-100 justify-content-between align-items-center">
+            <div class="col-12 col-lg-auto text-center text-lg-left">
+                <a class="navbar-brand" href="#" style="color: white">My RSS reader</a>
+            </div>
+            <div class="col-12 col-lg-auto">
+                <form class="form mb-0">
+                    <div class="row">
+                        <div class="col-12 col-lg-auto form-group-wrapper">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">URL</span>
+                                    </div>
+                                    <input id="urlInput" type="text" class="form-control bg-light" placeholder="RSS URL"
+                                           aria-label="RSS URL" aria-describedby="basic-addon1"
+                                           value="https://www.sme.sk/rss-title">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-auto">
+                            <div class="row">
+                                <div class="col col-lg-auto form-group-wrapper form-group-wrapper--field">
+                                    <div class="form-group">
+                                        <select class="custom-select" id="fieldSelect">
+                                            <option value="publishedDate">Čas</option>
+                                            <option value="title">Názov</option>
+                                            <option value="author">Autor</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col col-lg-auto form-group-wrapper form-group-wrapper--order">
+                                    <div class="form-group">
+                                        <select class="custom-select" id="orderSelect">
+                                            <option value="-">Zostupne</option>
+                                            <option value="">Vzostupne</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-auto text-center text-lg-left">
+                            <button class="btn btn-secondary bg-light" id="submit_button" onclick="loadPage()" type="button">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div id="title"></div>
+    <div id="feeds"></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+<script src="js/rss.global.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
