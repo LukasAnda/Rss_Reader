@@ -24,11 +24,11 @@ jobs:
     - name: Minify CSS and JS
       uses: nizarmah/auto-minify@v1.6
       with:
-        directory: .
+        directory: 'js'
       
-#     - name: Auto committing minified files
-#       uses: stefanzweifel/git-auto-commit-action@v4.1.1
-#       with:
-#         repository: 'js'
-#         commit_message: "Github Action: Auto Minified JS and CSS files"
-#         branch: pages
+    - name: Auto committing minified files
+      uses: stefanzweifel/git-auto-commit-action@v4.1.1
+      with:
+        repository: 'js'
+        commit_message: "Github Action: Auto Minified JS and CSS files"
+        branch: pages
