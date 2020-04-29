@@ -33,6 +33,7 @@ jobs:
     
     - name: Commit files to new branch
       run: |
+        git fetch origin/master
         git checkout --track origin/pages
         git add .
         git commit -m "Github Action: Auto Minified JS and CSS files"
