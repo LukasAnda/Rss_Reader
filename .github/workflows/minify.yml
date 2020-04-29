@@ -33,8 +33,7 @@ jobs:
     
     - name: Commit files to new branch
       run: |
-        echo ${{ github.ref }}
-        git checkout pages
+        git checkout --track origin/pages
         git add .
         git commit -m "Github Action: Auto Minified JS and CSS files"
         git push --set-upstream origin pages
