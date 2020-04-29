@@ -31,14 +31,17 @@ jobs:
       with:
         directory: "js"
     
-    - name: Commit files to new branch
+    - name: Commit files
       run: |
-        git fetch origin/master
-        git checkout --track origin/pages
-        git add .
-        git commit -m "Github Action: Auto Minified JS and CSS files"
-        git push --set-upstream origin pages
-
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Add changes" -a
+        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        branch: pages
+        github_token: ${{ secrets.GITHUB_TOKEN }}
       
       
 #     - name: Auto committing minified files
