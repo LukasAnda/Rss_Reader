@@ -31,4 +31,4 @@ jobs:
       with:
         repository: 'js'
         commit_message: "Github Action: Auto Minified JS and CSS files"
-        branch: ${{ pages }}
+        branch: pages
