@@ -24,7 +24,7 @@ jobs:
     - name: Minify CSS and JS
       uses: nizarmah/auto-minify@v1.6
       with:
-        directory: 'js'
+        directory: .
       
 #     - name: Auto committing minified files
 #       uses: stefanzweifel/git-auto-commit-action@v4.1.1
