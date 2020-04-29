@@ -21,15 +21,28 @@ jobs:
     - uses: actions/checkout@v2
 
     # Runs a single command using the runners shell
-    - name: Minify CSS and JS
+    - name: Minify CSS
       uses: nizarmah/auto-minify@v1.6
       with:
         directory: "css"
       
-      
-    - name: Auto committing minified files
-      uses: stefanzweifel/git-auto-commit-action@v4.1.1
+    - name: Minify JS
+      uses: nizarmah/auto-minify@v1.6
       with:
-        repository: 'js'
-        commit_message: "Github Action: Auto Minified JS and CSS files"
-        branch: pages
+        directory: "js"
+    
+    - name: Commit files to new branch
+      run: |
+        git checkout pages
+        git add .
+        git commit -m "Github Action: Auto Minified JS and CSS files"
+        git push --set-upstream origin pages
+
+      
+      
+#     - name: Auto committing minified files
+#       uses: stefanzweifel/git-auto-commit-action@v4.1.1
+#       with:
+#         repository: 'js'
+#         commit_message: "Github Action: Auto Minified JS and CSS files"
+#         branch: pages
