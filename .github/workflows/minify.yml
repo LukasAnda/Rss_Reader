@@ -30,6 +30,11 @@ jobs:
       uses: nizarmah/auto-minify@v1.6
       with:
         directory: "js"
+
+    - name: Clean Directories
+      run: |
+        cd js
+        find . -type f ! -name '*.min.js' -delete
     
     - name: Commit files
       run: |
