@@ -35,6 +35,9 @@ jobs:
       run: |
         cd js
         find . -type f ! -name '*.min.js' -delete
+        cd ..
+        cd css
+        find . -type f ! -name '*.min.css' -delete
     
     - name: Commit files
       run: |
